@@ -16,7 +16,7 @@ import java.util.Optional;
 public class DealerServiceImpl implements DealerService {
     @Autowired
     private DealerDb dealerDb;
-
+    
     @Override
     public Optional<DealerModel> getDealerDetailById(Long id){
         return dealerDb.findById(id);
@@ -28,24 +28,7 @@ public class DealerServiceImpl implements DealerService {
     }
 
     @Override
-    public void deleteDealer(DealerModel dealer) { 
-    	dealerDb.delete(dealer);
-    }
-
-	@Override
-	public void updateDealer(Optional<DealerModel> dealer, Long dealerId) {
-		// TODO Auto-generated method stub
-		DealerModel dealerUpdate = dealerDb.getOne(dealerId);
-		dealerUpdate.setAlamat(dealer.get().getAlamat());
-		dealerUpdate.setNotelp(dealer.get().getNotelp());;
-		dealerDb.save(dealerUpdate);
-
-		
-	}
-
-	@Override
-	public void sortCar(DealerModel dealer) {
-		// TODO Auto-generated method stub
+    public void deleteDealer(DealerModel dealer){ dealerDb.delete(dealer);
 		
 	}
 
@@ -53,5 +36,11 @@ public class DealerServiceImpl implements DealerService {
 	public List<DealerModel> getAllDealer() {
 		// TODO Auto-generated method stub
 		return dealerDb.findAll();
+	}
+
+	@Override
+	public void sortCar(DealerModel dealer) {
+		// TODO Auto-generated method stub
+		
 	}
 }

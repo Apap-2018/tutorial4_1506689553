@@ -11,7 +11,6 @@ public interface DealerService {
 
     void addDealer(DealerModel dealer);
     void deleteDealer(DealerModel dealer);
-    void updateDealer(Optional<DealerModel> dealer, Long dealerId);
 	void sortCar(DealerModel dealer);
 	
 	List<DealerModel> getAllDealer();
