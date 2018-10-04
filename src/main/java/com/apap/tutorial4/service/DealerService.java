@@ -16,6 +16,4 @@ public interface DealerService {
 	
 	List<DealerModel> getAllDealer();
 
-
-
 }

@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<title>View Dealer</title>
-	</head>
-	<body>
-		<br></br>
-		<h3 th:text= "'Alamat: ' + ${dealer.alamat}"></h3>
-		<h3 th:text="'Telepon: ' + ${dealer.noTelp}"></h3>
-		
-		<a th:href="@{'/car/add/' + ${dealer.id}}">Add Car</a>
-		
-	</body>
+<html xmlns:th="http:www.thymeleaf.org">
+<head>
+<title>View Detail</title>
+</head>
+<body>
+	
+	<h3 th:text="'alamat: ' + ${dealer.alamat}"></h3>
+	<h3 th:text="'Telepon: ' + ${dealer.noTelp}"></h3>
+	
+	<div th:each="car : ${listCar}">
+        <h3 th:text="${car.id}"></h3>
+        <h3 th:text="${car.brand}"></h3>
+        <h3 th:text="${car.type}"></h3>
+        <h3 th:text="${car.price}"></h3>
+        <h3 th:text="${car.amount}"></h3>
+    </div>
+	
+	<td><a th:href="@{'/car/add'} + ${dealer.id}">Add car</a></td>
+</body>
 </html>
-
-
